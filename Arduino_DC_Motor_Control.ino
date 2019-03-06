@@ -3,15 +3,14 @@
 
 
 PacketSerial myPacketSerial;
-int motorPin1 = 6;
-int motorPin2 = 7;
-int motor2Pin1 = 3;
-int motor2Pin2 = 4;
-int pwmMotor1 = 5;
-int pwmMotor2 = 9;
-int8_t parameter1 = 0;
-int8_t parameter2 = 0;
+#define motorPin1 6
+#define motorPin2 7
+#define motor2Pin1 3
+#define motor2Pin2 4
+#define pwmMotor1 5;
+#define pwmMotor2 9
 #define sRate 115200
+
 
 /*
  * 
@@ -67,10 +66,9 @@ void onPacketReceived(const uint8_t* buffer, size_t size){ //what do we want to 
     rightMotor(0);
     return;
   }  
-  parameter1 = buffer[0];
-  parameter2 = buffer[1];
-  leftMotor(parameter1);
-  rightMotor(parameter2);
+  
+  leftMotor((int8_t)buffer[0]);
+  rightMotor((int8_t)buffer[1]);
 }
 
 void setup() {
