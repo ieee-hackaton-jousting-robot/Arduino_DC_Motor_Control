@@ -87,58 +87,7 @@ void setup() {
 }
 
 void loop() {
-//leftMotor(127);
-//rightMotor(127); 
-  
   //first we need to read the values from serial, take these values as parameters 1 and 2 and use it to control our robot
   myPacketSerial.update(); //regularly needs to do this
   
-//    analogWrite(pwmMotor1, dtyCycl1);
-//    analogWrite(pwmMotor2, dtyCycl2);
-//
-//
-//  
-//    // Turn the motor in one direction
-//    digitalWrite(motor2Pin1, LOW); //fwrds for 1
-//    digitalWrite(motor2Pin2, HIGH); //bwds for 2
-//    delay(1000);
-//    digitalWrite(motor2Pin1, HIGH);
-//    digitalWrite(motor2Pin2, LOW);
-//    delay(1000);
-//    //digitalWrite(motor2Pin1, HIGH);
-//    //digitalWrite(motor2Pin2, LOW);
-//
-//    
-//    //Go Straight
-//    while (parameter ){
-//      digitalWrite(motorPin1, HIGH);
-//      digitalWrite(motorPin2, LOW);
-//      digitalWrite(motor2Pin1, LOW);
-//      digitalWrite(motor2Pin2, HIGH);
-//    }
-//
-//    //Go Backwards
-//    while (){
-//      digitalWrite(motorPin1, LOW);
-//      digitalWrite(motorPin2, HIGH);
-//      digitalWrite(motor2Pin1, HIGH);
-//      digitalWrite(motor2Pin2, LOW);
-//    }
-//
-//    //Turn Left, should be the same
-//    while (){
-//      digitalWrite(motorPin1, LOW);
-//      digitalWrite(motorPin2, HIGH);
-//      digitalWrite(motor2Pin1, LOW);
-//      digitalWrite(motor2Pin2, HIGH);
-//    }
-//
-//    //Turn Right
-//    while (){
-//      digitalWrite(motorPin1, HIGH);
-//      digitalWrite(motorPin2, LOW);
-//      digitalWrite(motor2Pin1, HIGH);
-//      digitalWrite(motor2Pin2, LOW);
-//    }
-    
 }
