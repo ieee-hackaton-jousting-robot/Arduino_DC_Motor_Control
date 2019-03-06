@@ -45,7 +45,7 @@ Servo j_arm;
 void moveJArm(int input) {
   if (input < 0) input = 0; 
   if (input > 100) input = 100; 
-  return map(input, 0, 100, j_arm_min, j_arm_max);
+  j_arm.write(map(input, 0, 100, j_arm_min, j_arm_max));
 }
 
 void leftMotor(int input) {
@@ -85,12 +85,17 @@ void onPacketReceived(const uint8_t* buffer, size_t size){ //what do we want to 
   if (size != 3){ //this is garbage, do nothing
     leftMotor(0);
     rightMotor(0);
+
+    Serial.println("wrong number of bytes");
     return;
   }  
   
   leftMotor((int8_t)buffer[0]);
   rightMotor((int8_t)buffer[1]);
   moveJArm((int)buffer[2]); 
+
+  Serial.print("Arm: "); 
+  Serial.println((int)buffer[2]); 
 }
 
 void setup() {
@@ -104,7 +109,7 @@ void setup() {
     myPacketSerial.begin(sRate);
     myPacketSerial.setPacketHandler(&onPacketReceived);
     j_arm.attach(J_ARM_PIN); 
-    j_arm.write(j_arm_min);
+    moveJArm(j_arm_min);
 
 }
 
